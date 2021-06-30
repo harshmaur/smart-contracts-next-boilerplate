@@ -6,7 +6,7 @@ module.exports = {
       network_id: '*', // Match any network id
     },
   },
-  contracts_build_directory: './artifacts/',
+  contracts_build_directory: './abi/',
   compilers: {
     solc: {
       version: '0.8.4',

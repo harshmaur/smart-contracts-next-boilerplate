@@ -32,3 +32,10 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# because we use migrations-ts
+migrations
+
+# buidler
+artifacts
+cache

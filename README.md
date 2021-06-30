@@ -2,11 +2,10 @@
 
 ### Features
 
-- Typescript
+- NextJS+ Typescript
 - Truffle (Compile, Migrations, Tests)
-- NextJS
 - Prettier + eslint
-- Tailwindcss
-- Sample Contract
+- Tailwindcss + React Icons + headlessui
+- Sample Contract with tests
 
 Look at package.json for scripts that you can run.
