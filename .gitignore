@@ -37,5 +37,6 @@ yarn-error.log*
 migrations
 
 # buidler
+abi
 artifacts
 cache
