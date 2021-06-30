@@ -1,3 +1,4 @@
+// @ts-ignore
 const Inbox = artifacts.require('Inbox')
 
 contract('Inbox', (accounts) => {

@@ -7,10 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate-types": "typechain --target=truffle-v5 './abi/*.json'",
+    "generate-types": "typechain --target=truffle-v5 --out-dir ./src/types/truffle-contracts './src/abi/*.json'",
     "postinstall": "truffle compile && yarn generate-types",
     "migrate": "tsc --project ./tsconfig.migrate.json --outDir ./migrations && truffle migrate",
-    "test:contracts": "truffle test"
+    "test:contracts": "truffle test ./src/test/*"
   },
   "dependencies": {
     "@headlessui/react": "^1.3.0",
