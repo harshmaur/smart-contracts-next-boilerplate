@@ -40,3 +40,5 @@ migrations
 abi
 artifacts
 cache
+
+.envrc

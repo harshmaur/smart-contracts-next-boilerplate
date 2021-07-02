@@ -10,6 +10,7 @@
     "generate-types": "typechain --target=truffle-v5 --out-dir ./src/types/truffle-contracts './src/abi/*.json'",
     "postinstall": "truffle compile && yarn generate-types",
     "migrate": "tsc --project ./tsconfig.migrate.json --outDir ./migrations && truffle migrate",
+    "migrate:rinkeby": "tsc --project ./tsconfig.migrate.json --outDir ./migrations && truffle migrate --network rinkeby",
     "test:contracts": "truffle test ./src/test/*"
   },
   "dependencies": {
@@ -29,6 +30,7 @@
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/line-clamp": "^0.2.1",
     "@tailwindcss/typography": "^0.4.1",
+    "@truffle/hdwallet-provider": "^1.4.1",
     "@typechain/truffle-v5": "^5.0.0",
     "@types/bn.js": "^5.1.0",
     "@types/chai": "^4.2.19",
