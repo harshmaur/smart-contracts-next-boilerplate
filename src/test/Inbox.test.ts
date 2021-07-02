@@ -10,6 +10,7 @@ describe('Inbox', () => {
     accounts = await ethers.getSigners()
     const Inbox = await ethers.getContractFactory('Inbox')
     inbox = await Inbox.deploy('Hello World')
+    await inbox.deployed()
   })
 
   it('should be deployed', async () => {
@@ -18,7 +19,8 @@ describe('Inbox', () => {
   })
 
   it('should set the message', async () => {
-    await inbox.setMessage('Hola, mundo!')
+    const transaction = await inbox.setMessage('Hola, mundo!')
+    await transaction.wait()
     const newMessage = await inbox.message()
     expect(newMessage).to.equal('Hola, mundo!')
   })
