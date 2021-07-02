@@ -1,23 +1,25 @@
-// @ts-ignore
-const Inbox = artifacts.require('Inbox')
+import { ethers } from 'hardhat'
+import { Signer } from 'ethers'
+import { expect } from 'chai'
+import { Inbox } from '../types'
 
-contract('Inbox', (accounts) => {
-  it('is deployed', async () => {
-    const inboxInstance = await Inbox.deployed()
-    expect(inboxInstance.address).to.exist
+describe('Inbox', () => {
+  let accounts: Signer[]
+  let inbox: Inbox
+  beforeEach(async function () {
+    accounts = await ethers.getSigners()
+    const Inbox = await ethers.getContractFactory('Inbox')
+    inbox = await Inbox.deploy('Hello World')
   })
 
-  it('gets initialised with a default value', async () => {
-    const inboxInstance = await Inbox.deployed()
-    const message = await inboxInstance.message()
-    expect(message).to.eq('Yo')
+  it('should be deployed', async () => {
+    const initialMessage = await inbox.message()
+    expect(initialMessage).to.eq('Hello World')
   })
 
   it('should set the message', async () => {
-    const newMessage = 'New Message'
-    const inboxInstance = await Inbox.deployed()
-    await inboxInstance.setMessage(newMessage)
-    const message = await inboxInstance.message()
-    expect(message).to.eq(newMessage)
+    await inbox.setMessage('Hola, mundo!')
+    const newMessage = await inbox.message()
+    expect(newMessage).to.equal('Hola, mundo!')
   })
 })

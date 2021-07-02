@@ -36,9 +36,9 @@ yarn-error.log*
 # because we use migrations-ts
 migrations
 
-# buidler
-abi
-artifacts
-cache
-
 .envrc
+node_modules
+
+#Hardhat files
+cache
+artifacts
