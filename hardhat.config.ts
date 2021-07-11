@@ -1,6 +1,6 @@
 import { task } from 'hardhat/config'
-import '@nomiclabs/hardhat-ethers'
 import '@typechain/hardhat'
+import '@nomiclabs/hardhat-waffle'
 import { HardhatUserConfig } from 'hardhat/types'
 
 // Currently we do not have waffle. We might need it later for better testing support
