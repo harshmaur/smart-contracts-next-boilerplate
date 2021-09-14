@@ -1,7 +1,7 @@
 import { ethers } from 'hardhat'
 import { Signer } from 'ethers'
 import { expect } from 'chai'
-import { Inbox } from '../types'
+import { Inbox } from '../types/typechain'
 
 describe('Inbox', () => {
   let accounts: Signer[]

@@ -20,7 +20,7 @@ const RINKEBY_PROJECT_URI = process.env.RINKEBY_PROJECT_URI
 const config: HardhatUserConfig = {
   // @ts-ignore - because its an external property
   typechain: {
-    outDir: 'src/types',
+    outDir: 'src/types/typechain',
   },
   paths: {
     sources: './src/contracts',
